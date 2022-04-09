@@ -1,12 +1,8 @@
-import {
-  Flex,
-  Box,
-  Link as StyledLink,
-  Image,
-} from "rebass/styled-components";
-import { Link as RouterLink } from 'react-router-dom'
-import { Container } from "./Container"
+import { Flex, Box, Link as StyledLink, Image } from "rebass/styled-components";
+import { Link as RouterLink } from "react-router-dom";
+import { Container } from "./Container";
 import logo from "./logo.svg";
+import { Button } from "antd";
 
 export const NavBar = () => {
   return (
@@ -18,9 +14,11 @@ export const NavBar = () => {
             React Query CRUD
           </StyledLink>
           <Box mx="auto" />
-          <StyledLink as={RouterLink} variant="nav" to="/create-book">
-            + Add new book
+          <Button>
+            <StyledLink as={RouterLink} variant="nav" to="/create-book">
+              + Add new book
             </StyledLink>
+          </Button>
         </Flex>
       </Container>
     </Flex>
