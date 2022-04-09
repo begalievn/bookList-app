@@ -1,24 +1,28 @@
 import { Flex, Box, Link as StyledLink, Image } from "rebass/styled-components";
 import { Link as RouterLink } from "react-router-dom";
 import { Container } from "./Container";
-import logo from "./logo.svg";
 import { Button } from "antd";
+import "antd/dist/antd.css";
+import booksIcon from "./booksIcon.svg";
+import addBookIcon from "./addBookIcon.svg";
 
 export const NavBar = () => {
   return (
-    <Flex bg="black" color="white" justifyContent="center">
+    <Flex bg="#aaa" color="white" justifyContent="center">
       <Container>
-        <Flex px={2} width="100%" alignItems="center">
-          <Image size={20} src={logo} />
+        <Flex px={3} width="100%" alignItems="center">
+          <Image size={25} src={booksIcon} />
           <StyledLink as={RouterLink} variant="nav" to="/">
-            React Query CRUD
+            BookList
           </StyledLink>
           <Box mx="auto" />
-          <Button>
-            <StyledLink as={RouterLink} variant="nav" to="/create-book">
-              + Add new book
-            </StyledLink>
-          </Button>
+
+          <StyledLink as={RouterLink} variant="nav" to="/create-book">
+            <Button>
+              <Image size={20} src={addBookIcon} />
+              <span style={{ width: "5px" }}></span> Add a Book
+            </Button>
+          </StyledLink>
         </Flex>
       </Container>
     </Flex>
